@@ -1,0 +1,31 @@
+package com.example.demo.repositories;
+
+import java.util.Date;
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.example.demo.entities.Situation;
+
+
+
+@Repository
+public interface SituationRepository extends JpaRepository<Situation, Long> {
+	Optional<Situation> findByID(Long id);
+    Boolean existsByID(Long id);
+    Optional<Situation> findBynomSituation(String nomSituation);
+    Boolean existsBynomSituation(String nomSituation);
+    Boolean existsByTypeStuition(String TypeStuition);
+    Optional<Situation> findByTypeStuition(String TypeStuition);
+    Optional<Situation> findBytotaleprix(int totaleprix );
+    Boolean existsBytotaleprix(int totaleprix);
+    Optional<Situation> findByvilleSituation(String villeSituation);
+    Boolean existsByvilleSituation(String villeSituation);
+    Optional<Situation> findByexpiration( Date expiration);
+    Boolean existsByexpiration(Date expiration);
+   
+    
+
+	
+}
